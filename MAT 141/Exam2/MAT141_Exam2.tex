@@ -1,0 +1,163 @@
+%%%%%%%%%%%% Attribution %%%%%%%%%%%%
+% This template was created by 
+% Chuck F. Rocca at WCSU and may be
+% copied and used freely for 
+% non-commercial purposes.
+% 10-17-2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Start Document Header %%%%%%%
+% In creating a new document
+% copy and paste the header 
+% as is.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+
+%%%% Header Information %%%%%
+\include{../RoccaProblem}
+
+%%%% Document Information %%%%
+    \title{MAT 141 Practice Exam 2}
+    \author{Lucas Vas}
+    \date{10/09/2023}
+
+%%%%%%% End Document Header %%%%%%%
+
+%%%% Begin Document %%%%
+% note that the document starts with
+% \begin{document} and ends with
+% \end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%% Format Running Header %%%%%
+\markboth{\theauthor}{\thetitle}
+
+%%%% Insert the Title Information %%%%
+\maketitle
+
+%%%% Insert the Typed Up Problems %%%%
+
+    \begin{problem}{Problem \# 1}
+        The first four terms of the sequence $b_j = \frac{5-j}{5+j}$ are:
+        \begin{itemize}
+            \item[] $b_0 = \frac{5}{5} = 1$
+            \item[] $b_1 = \frac{5-1}{5+1} = \frac{2}{3}$
+            \item[] $b_2 = \frac{5-2}{5+2} = \frac{3}{7}$
+            \item[] $b_3 = \frac{5-3}{5+3} = \frac{1}{4}$
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{Problem \# 2}
+        The explicit formula for the given sequence is $a_n = \frac{1}{n} - \frac{1}{n+1}$, for any $n$ such that $n > 0$.
+    \end{problem}
+
+    \begin{problem}{Problem \# 3}
+        Given the sum $\sum_{k=0}^{5} 2k+1$, the terms are:
+        \begin{itemize}
+            \item[] $k_0 = 2(0)+1 = 1$
+            \item[] $k_1 = 2(1)+1 = 3$
+            \item[] $k_2 = 2(2)+1 = 5$
+            \item[] $k_3 = 2(3)+1 = 7$
+            \item[] $k_4 = 2(4)+1 = 9$
+            \item[] $k_5 = 2(5)+1 = 11$
+        \end{itemize}
+        We would then sum these together, giving us a value of $36$.
+    \end{problem}
+    
+    \begin{problem}{Problem \# 4}
+        Given the product $\prod_{i=1}^{4} (\frac{1}{2})^i$, the terms are:
+        \begin{itemize}
+            \item[] $i_1 = (\frac{1}{2})^1 = \frac{1}{2}$
+            \item[] $i_2 = (\frac{1}{2})^2 = \frac{1}{2^2}$
+            \item[] $i_3 = (\frac{1}{2})^3 = \frac{1}{2^3}$
+            \item[] $i_4 = (\frac{1}{2})^4 = \frac{1}{2^4}$
+        \end{itemize}
+        We then multiply these terms together, giving us a product of $\frac{1}{2^{10}}$.
+    \end{problem}
+
+    \begin{problem}{Problem \# 5}
+        Given the sequence $1^2-2^2+3^2-4^2+5^2-6^2+7^2$, we can rewrite this as:
+        \[\sum_{i=1}^{7} (-1)^{i+1}(i^2)\]
+    \end{problem}
+
+    \begin{problem}{Problem \# 6}
+        Since our first term is a 3, and not a 1, we need to reindex our summation to fit it. That will look like this, for values $j=i+3$ and $i=j-3$:
+        \[\sum_{j=3}^{n+3}i+3 = \frac{(n+3)(n+4)}{2}-(n+3)(3)\]
+        After plugging in our values, we get that:
+        \[S = \frac{(1000+3)(1000+4)}{2}-(1000+3)(3) = 500497\]
+    \end{problem}
+
+    \begin{problem}{Problem \# 7}
+        The final term of the summation can be found by doing:
+        \[\frac{1}{(n+1)^2+1} = \frac{1}{n^2+2n+2}\]
+        Then we rewrite the summation to separate off the final term:
+        \[(\sum_{i=1}^n \frac{1}{n^2+1}) + \frac{1}{n^2 + 2n + 2}\]
+    \end{problem}
+    
+    \begin{problem}{Problem \# 8}
+        Given our original formula, we can reindex it like so, using $i=j-1$:
+        \[\sum_{j=2}^{n+2}\frac{j^2}{(j-1)*n}\]
+    \end{problem}
+
+    \begin{problem}{Problem \# 9}
+        Given our recursive sequence with first terms $s_0=1, s_1=1$, we find the first 5 terms of the sequence as:
+        \begin{itemize}
+            \item[] $s_0=1$
+            \item[] $s_1=1$
+            \item[] $s_2=\frac{1}{s_1+s_0} = \frac{1}{2}$
+            \item[] $s_3 = \frac{1}{s_2+s_1} = \frac{2}{3}$
+            \item[] $s_4 = \frac{1}{s_3+s_2} = \frac{3}{4}$
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{Problem \# 10}
+        Given the relation $h_k = 2^k-h_{k-1}$ and first term $h_0 = 1$, we get $h_3$ like so:
+        \begin{equation*}
+            \begin{split}
+                h_3 & = 2^3 - h_2 \\
+                & = 2^3 - 2^2 + h_1 \\
+                & = 2^3 - 2^2 + 2^1 - h_0 \\
+                & = 2^3 - 2^2 + 2^1 - 2^0
+            \end{split}
+        \end{equation*}
+        We can see that our relation looks like this:
+        \[h_n = 2^n - 2^{n-1} + 2^{n-2} - 2^{n-3} + \ldots\]
+        Which can be rewritten, using summation notation:
+        \[(\sum_{i=0}^{n-1}-2^i)+2^n\]
+        We then use the general formula for geometric summations, and get our explicit equation:
+        \[(\frac{1-(-2)^n}{1+2}) + 2^n\]
+    \end{problem}
+
+    \begin{problem}{Problem \# 11}
+        Our base case is that $n = 4$. We use the assertion about the Fibonacci Sequence to show this:
+        \begin{equation*}
+            \begin{split}
+                F_4 & = 3F_1 + 2F_0 \\
+                & = F_1 + (2F_1 + 2F_0) \\
+                & = F_1 + 2F_2 \\
+                & = F_1 + F_2 + F_2 \\
+                & = F_3 + F_2 \\
+                & = F_4
+            \end{split}
+        \end{equation*}
+        We then assume that $n = k$, and that $F_n = 3F_{k-3} + 2F_{k-4}$. It then follows that:
+        \begin{equation*}
+            \begin{split}
+                F_{k+1} & = 3F_{k-2} + 2F_{k-3} \\
+                & = 3(F_{k-3} + F_{k-4}) + 2F_{k-3} \\
+                & = (3F_{k-3} + 2F_{k-4}) + F_{k-4} + 2F_{k-3} \\
+                & = F_k + (F_{k-4} + F_{k-3}) + F_{k-3} \\
+                & = F_k + F_{k-2} + F_{k-3} \\
+                & = F_k + F_{k-1} \\
+                & = F_{k+1} \checkmark
+            \end{split}
+        \end{equation*}
+        The definition of the Fibonacci Sequence holds true, and therefore
+        
+        $F_{k} = 3F_{k-3} + 2F_{k-4}$ for all $n \geq 4$.
+    \end{problem}
+    
+\end{document}

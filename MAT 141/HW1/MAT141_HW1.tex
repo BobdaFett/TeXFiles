@@ -1,0 +1,61 @@
+\documentclass{article}
+%\usepackage{graphicx} % Required for inserting images
+\usepackage{}
+
+\title{MAT 141 HW 1}
+\author{Lucas Vas}
+\date{October 2023}
+
+\begin{document}
+
+\maketitle
+\clearpage
+\section{Section 2.3, Question 38}
+\subsection{Part B}
+Native C is a knave, and native D is a knight.
+\begin{enumerate}
+    \item Suppose C is a knight.
+    \item What C says is true.
+    \item C and D must be knaves.
+    \item \textit{Contradiction:} If C is a knight, then C has said that it is a knave. This doesn't work.
+    \item C is a knave.
+    \item D is not a knave.
+    \item D is a knight.
+\end{enumerate}
+As we can see, C saying that both C and D are knaves would be a contradiction. C cannot make this assertion due to the fact that it, itself, is a knave. We then negate C's original statement, and get that D is not a knave but instead a knight.
+
+\subsection{Part C}
+There should be a single knave, and a single knight. In this case, we show what happens when you take either E or F's statement that the other is a knave as being true:
+
+Suppose that what E says is true:
+\begin{enumerate}
+    \item F is a knave. (That's what E says.)
+    \item E is not a knave. (Negation of F's statement.)
+    \item E is a knight. (By definition of being a knight)
+\end{enumerate}
+The same is true if we take F's statement as being true:
+\begin{enumerate}
+    \item E is a knave. (That's what F says.)
+    \item F is not a knave. (Negation of E's statement.)
+    \item F is a knight. (By definition of being a knight.)
+\end{enumerate}
+No matter which native we take as being the true statement, we end up with one knave and one knight.
+\clearpage
+\section{Section 3.3, Question 57}
+The first statement is $(\forall x \in D) : (P(x) \vee Q(x))$, and the second is $((\forall x \in D) : P(x)) \vee ((\forall x \in D) : Q(x))$. Should the first statement be true, then every $x \in D$ \textit{must} satisfy either $P(x)$ or $Q(x)$.  This means that the second statement will also always be true, since no matter which $x$ you may choose, the chosen $x$ \textit{will} satisfy either $P(x)$ or $Q(x)$, therefore making the overall statement true. Should the first statement be false, then $x$ is neither $P(x)$ or $Q(x)$, making the second statement false as well.
+
+\section{Section 3.3, Question 58}
+The first statement is $(\exists x \in D) : (P(x) \vee Q(x)$. The second statement is $((\exists x \in D) : P(x)) \vee ((\exists x \in D) : Q(x))$. I believe that the same logic applies here as for the previous question. No matter which $x$ you choose, it will be guaranteed to satisfy either $P(x)$ or $Q(x)$, or neither of them. This will give you the same truth value in both the first and second statements.
+
+\section{Section 3.4, Question 34}
+We can reorder our premises like so, rewriting them all in "if-then" format:
+\begin{enumerate}
+    \item If you wrote \textit{Hamlet}, then you are a true poet.
+    \item Shakespeare wrote \textit{Hamlet}.
+    \item If a writer is a true poet, then they can stir the human heart.
+    \item If a writer can stir the human heart, then they understand human nature.
+    \item If a writer understands human nature, then they are clever.
+\end{enumerate}
+We can also draw a conclusion from this - "therefore Shakespeare is clever."
+
+\end{document}
