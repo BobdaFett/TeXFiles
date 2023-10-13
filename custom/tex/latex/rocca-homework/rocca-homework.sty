@@ -1,28 +1,24 @@
-%%% Document Settings %%%%
-\usepackage[utf8]{inputenc}
-\usepackage[
-    twoside,
-    top=1in,
-    bottom=0.75in,
-    inner=0.5in,
-    outer=0.5in
-]{geometry}
-\pagestyle{myheadings}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rocca-homework}
 
-%%%% Additional Commands to Load %%%%
-\usepackage{tcolorbox}
+% ----- Packages --------------------------------------------------------------
+
+\RequirePackage{tcolorbox}
 \tcbuselibrary{skins}
-\usepackage{minted}
-\usepackage{color}
+\RequirePackage{minted}
+\RequirePackage{color}
 \usepackage{tikz}
 \usetikzlibrary{calc}
-\usepackage{tabularx,colortbl}
-\usepackage{amsfonts,amsmath,amssymb}
-\usepackage{titling}
-\usepackage{mathrsfs}
-\usepackage{calc}
+\RequirePackage{tabularx,colortbl}
+\RequirePackage{amsfonts,amsmath,amssymb}
+\RequirePackage{titling}
+\RequirePackage{mathrsfs}
+\RequirePackage{calc}
+\RequirePackage{enumerate}
+\RequirePackage{enumitem}
 
-%%%% Commands to Define Homework Boxes %%%%
+% ----- Questions -------------------------------------------------------------
+
 \newtcolorbox{prob}[2][]{
 % Set box style
     sidebyside,
@@ -43,6 +39,7 @@
     },
     fonttitle=\large\bfseries,#1
 }
+
 \newenvironment{problem}[1]{
     \begin{prob}{#1}
 }
