@@ -6,30 +6,13 @@
 % 10-17-2021
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%% Start Document Header %%%%%%%
-% In creating a new document
-% copy and paste the header 
-% as is.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage{rocca-homework}
+\usepackage[letterpaper, margin=.75in]{geometry}
 
-%%%% Header Information %%%%%
-% \include{../RoccaProblems}
-
-%%%% Document Information %%%%
-    \title{Homework Template Blank}
-    \author{Some Student}
-    \date{The Due Date}
-
-%%%%%%% End Document Header %%%%%%%
-
-%%%% Begin Document %%%%
-% note that the document starts with
-% \begin{document} and ends with
-% \end{document}
-%%%%%%%%%%%%%%%%%%%%%%%%
+\title{MAT 141 Homework \#2}
+\author{Lucas Vas}
+\date{10/16/2023}  % One class late.
 
 \begin{document}
 
@@ -41,16 +24,115 @@
 
 %%%% Insert the Typed Up Problems %%%%
 
-    \begin{problem}{p.xyz \# 23}
-        Answer Goes Here!!!
+    \begin{problem}{Chapter 5.1 Question 87}
+        Since the algorithm for creating binary numbers from integers has to do with repeatedly
+        dividing by two, converting to hexadecimal is similar. We can repeatedly divide by 16 and
+        use the remainder to determine the hexadecimal digit. Hexadecimal uses the numbers 0-9 and
+        the letters A-F. I'll use a 4-digit hex integer for this. To convert the number
+        22522 to hexadecimal:
+        \begin{itemize}
+            \item[] $22522 \div 16 = 1407$ remainder 10, so the first digit is A.
+            \item[] $1407 \div 16 = 87$ remainder 15, so the second digit is F.
+            \item[] $87 \div 16 = 5$ remainder 7, so the third digit is 7.
+            \item[] $5 \div 16 = 0$ remainder 5, so the fourth digit is 5.
+        \end{itemize}
+        In computer science, we would also be pushing these digits onto a stack (first in last out),
+        so the final hexadecimal number would be 57FA. Usually this number, when written in binary,
+        would look like 101011111111010. Hexadecimal is far more efficient to calcluate and write.
+        In technicality, we could also do this by converting to binary first, then to hexadecimal
+        (since every hex digit translates to a 4-bit pattern in binary), but that's not what the
+        question was asking for.
     \end{problem}
 
-    \begin{problem}{p.yzx \# 32}
-        Answer Goes Here!!!
+    \begin{problem}{Chapter 5.6 Question 18a}
+        The recurrance relation that was created as part of question 17 was:
+        \[a_k = 3a_{k-1}+2\]
+        This is for moving a tower from pole A to pole C, but we want to transfer 
+        it from pole A to pole B instead. The first 3 terms look like this:
+        \begin{equation*}
+            \begin{split}
+                b_1 & = 1 \\
+                b_2 & = 2 \text{ (move the first disk to pole C)} \\
+                & = + 1 \text{ (move the second disk to pole B)} \\
+                & = + 1 \text{ (move the first disk back to pole B)} \\
+                & = 4 \\
+                b_3 & = 4 \text{ (set up 2-disk stack on pole B)} \\
+                & = + 4 \text{ (move the stack to pole C)} \\
+                & = + 1 \text{ (move the third disk to pole B)} \\
+                & = + 4 \text{ (move the stack to pole B)} \\
+                & = 13 \\
+            \end{split}
+        \end{equation*}
+        Our recurrance relation looks like this:
+        \begin{equation*}
+            b_k = 3b_{k-1} + 1, b_1 = 1
+       \end{equation*}
     \end{problem}
 
-    \begin{problem}{p.zxy \# 5}
-        Answer Goes Here!!!
+    \begin{problem}{Chapter 5.6 Question 18c}
+        To show that $b_k = a_{k-1} + 1 + b_{k-1}$ is true for all $k \geq 2$:
+        \begin{equation*}
+            \begin{split}
+                b_2 & = a_1 + 1 + b_1 \\
+                & = 2 + 1 + 1 \text{ (by definition of $a_1$)} \\
+                & = 4 \\
+            \end{split}
+        \end{equation*}
+        This is the value we should have expected (and I can't see another
+        way of connecting them) Therefore, by definition, $b_2 = a_1 + 1 + b_1$.
+        We then try this with $b_{k+1}$:
+        \begin{equation*}
+            \begin{split}
+                b_{k+1} & = a_k + 1 + b_k \\
+                & = (3a_{k-1} + 2) + 1 + (3b_{k-1} + 1) \\
+                & = 3a_{k-1} + 2 + 1 + 3b_{k-1} + 1 \\
+                & = 3a_{k-1} + 3b_{k-1} + 3 + 1 \\
+                & = 3(a_{k-1} + b_{k-1} + 1) + 1 \\
+                & = 3b_k + 1 \checkmark \\
+            \end{split}
+        \end{equation*}
+        As such, we've shown that $b_k = a_{k-1} + 1 + b_{k-1}$ is true for all $k \geq 2$.
+    \end{problem}
+
+    \begin{problem}{Chapter 5.6 Question 18d}
+        Personally, I think this is kind of a strange question. Of course $b_k \leq 3b_{k-1} + 1$,
+        because \textit{by definition} that's like saying $b_k \leq b_k$. I don't believe that a
+        proof is necessary for this, but I'll try it anyway. We'll start with the base case:
+        \begin{equation*}
+            \begin{split}
+                b_2 & \leq 3b_1 + 1 \\
+                4 & \leq 3 + 1 \\
+                4 & \leq 4 \checkmark \\
+            \end{split}
+        \end{equation*}
+        We then assume that for all $k \geq 2$, $b_k \leq 3b_{k-1} + 1$. We then can use induction:
+        \begin{equation*}
+            \begin{split}
+                b_{k+1} & = 3b_k + 1 \\
+                & \leq 3(3b_{k-1} + 1) + 1 \text{ (by assumption)} \\
+                & = 9b_{k-1} + 3 + 1 \\
+                & = 3(3b_{k-1} + 1) + 1 \\
+                & = 3b_k + 1 \checkmark \\
+            \end{split}
+        \end{equation*}
+    \end{problem}
+
+    \begin{problem}{Chapter 5.7 Question 57}
+        We're given this recurrance relation:
+        \[Y_k = E + c + mY_{k-1}\]
+        Using iteration on this relation looks like this:
+        \begin{equation*}
+            \begin{split}
+                Y_2 & = E + c + mY_{2-1} \\
+                & = E + c + m(E + c + mY_{1-1}) \\
+                & = E + c + m(E + c + mY_0) \\
+                & = E + c + Em + cm + m^2Y_0 \\
+            \end{split}
+        \end{equation*}
+        This starts to look a lot like a geometric series, so we can simplify it:
+        \[(\sum_{i=0}^{k-1} Em^i + cm^i) + m^{k}Y_0\]
+        As stated in the question, this simplifies even farther:
+        \[(E + c)(\frac{m^k - 1}{m - 1}) + m^{k}Y_0\]
     \end{problem}
 
 \end{document}
