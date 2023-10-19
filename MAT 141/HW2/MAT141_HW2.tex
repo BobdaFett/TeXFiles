@@ -110,11 +110,13 @@
             \begin{split}
                 b_{k+1} & = 3b_k + 1 \\
                 & \leq 3(3b_{k-1} + 1) + 1 \text{ (by assumption)} \\
-                & = 9b_{k-1} + 3 + 1 \\
-                & = 3(3b_{k-1} + 1) + 1 \\
-                & = 3b_k + 1 \checkmark \\
+                & \leq 9b_{k-1} + 3 + 1 \\
+                & \leq 3(3b_{k-1} + 1) + 1 \\
+                & \leq 3b_k + 1 \checkmark \\
             \end{split}
         \end{equation*}
+        The issue here is that I just took the assumption, plugged it in to the equation, and then pulled it
+        straight back out. I don't totally understand the idea behind this?
     \end{problem}
 
     \begin{problem}{Chapter 5.7 Question 57}
