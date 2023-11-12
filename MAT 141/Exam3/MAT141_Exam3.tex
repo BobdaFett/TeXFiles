@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage{rocca-homework}
+\usepackage[letterpaper, margin=.75in]{geometry}
+
+\author{Lucas Vas}
+\title{MAT141 Practice Exam 3}
+\date{10/30/2023}
+
+\begin{document}
+    \maketitle
+
+    \begin{problem}{Problem 1}
+        \begin{itemize}
+            \item[(a)] The powerset of A is \{$\emptyset$, \{1\}, \{2\}, \{1, 2\}\}
+            \item[(b)] The powerset of $A \cap B$ is \{$\emptyset$, \{2\}\}
+            \item[(c)] The powerset of $A \times B$ is \{$\emptyset$, \{(1, 2)\}, \{(1, 3)\}, \{(2, 2)\},\\
+            \{(2, 3)\}, \{(1, 2), (1, 3)\}, \{(1, 2), (2, 2)\}, \{(1, 2), (2, 3)\},\\
+            \{(1, 3), (2, 2)\}, \{(1, 3), (2, 3)\}, \{(2, 2), (2, 3)\},\\
+            \{(1, 2), (1, 3), (2, 2), (2, 3)\}\}
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{Problem 2}
+        Given our sets, then:
+        \begin{itemize}
+            \item[(a)] $A \cap B = \{x \in \mathbb{R} | 1 \leq x \leq 2\}$
+            \item[(b)] $(A \cup B)^c = \{x \in \mathbb{R} | (x \leq 0) \wedge (x \geq 9) \wedge (2 < x < 3)\}$
+            \item[(c)] $B^c \cap C = \{x \in \mathbb{R} | 4 \leq x \ 9\}$
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{Problem 3}
+        This function is not well defined because $h\left(\frac{m}{n}\right) = \frac{m}{n}$, however the function calls for $\frac{m^2}{n}$.
+        $\frac{m}{n} \neq \frac{m^2}{n}$, and thus the function is not well defined. \\ For example, if we used the input $\frac{3}{4}$,
+        then we would expect the output to be $\frac{3}{4}$, however the function would return $\frac{9}{4}$. 
+    \end{problem}
+
+    \begin{problem}{Problem 4}
+        Given the function $l: \mathbb{S} \rightarrow \mathbb{Z}$, where $\mathbb{S}$ is the set of all binary strings, and $l$ is the length of the string, then:
+        \begin{itemize}
+            \item[(a)] The function is not one to one, for example: the string "01" has the same length as the string "10", however the strings are not equal.
+            \item[(b)] The function is onto, since every value in the codomain will have at least one corresponding value in the domain. There is always a string of
+                       size n, where n could be an infinite number.
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{Problem 5}
+        If $g \circ f$ is one to one, then $g$ must also be one to one. This is because if $g$ is not one to one, then there exists
+        multiple outputs of any given output of $g$ in order to achieve the same output of $g \circ f$. This would mean that $g \circ f$ is not one to one.
+        Therefore, $g$ must be one to one in order for $g \circ f$ to be one to one.
+    \end{problem}
+
+    \begin{problem}{Problem 6}
+        All pairs contained in R are:
+        \[(3, 4), (3, 5), (3, 6), (4, 5), (4, 6), (5, 6)\]
+        All the pairs contained in $R^{-1}$ are: 
+        \[(4, 3), (5, 3), (6, 3), (5, 4), (6, 4), (6, 5)\] 
+    \end{problem}
+
+    \begin{problem}{Problem 7}
+        The set A looks a lot like binary quadruplets. There would be 16 total elements.
+        Given the relation where $sRt$ where $s$ and $t$ have the same starting letter, then the relation is reflexive,
+        symmetric, and transitive. Every element in the set is related to itself, since every element starts with its own first letter.
+        Every element is transitive, for example: ABBA is related to ABAB, and ABAB is related to AABB, and ABBA is related to AABB.
+        Every element is symmetric, for example: ABBA is related to ABAB, and ABAB is related to ABBA.
+
+        Due to the fact that this is an equivalence relation, it's also worth noting that there would be two equivalence classes, A and B.
+    \end{problem}
+
+    \begin{problem}{Problem 8}
+        This is really a very similar question to the last one. The set $\mathbb{R} \times \mathbb{R}$ is the set of all ordered pairs of real numbers.
+        The relation $(w,x)P(y,z)$ is asking for all ordered pairs where the first number is equal to the second letter. Once again, this type of relation
+        would be reflexive, symmetric, and transitive. Every element is related to itself, since the first number is equal to its own first number. Every element
+        is symmetric because if (a, b) and (c, d) are related, then (c, d) and (a, b) are related, since c = a. Every element is transitive because if (a, b) and (c, d)
+        are related, and (c, d) and (e, f) are related, then (a, b) and (e, f) are related, since a = c = e.
+
+        The equivalence classes within this would be the same as the first number in the ordered pairs. For example, the equivalence class [1] would be all ordered pairs
+        where the first number is 1, The equivalence class [2] would be all ordered pairs where the first number is 2, and so on.
+    \end{problem}
+\end{document}
