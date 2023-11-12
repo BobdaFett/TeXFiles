@@ -1,0 +1,18 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper, margin=.75in]{geometry}
+
+\begin{document}
+    I submitted this late because I forgot on the due date, my bad.
+
+    \begin{itemize}
+        \item SELECT M.MachineID, C.Name, S.PCN, M.DateCommitted
+        FROM MACHINE M, CUSTOMER C, SECTION S
+        WHERE C.International = 'Y' AND
+            M.MachineID = S.MachineID AND
+            M.DateCommitted < '2019/4/30' AND
+            M.DateCommitted > '2019/4/1' AND
+            S.Description = 'Cube Eng' AND
+            M.CustomerID = C.CustomerID
+        ORDER BY M.DateCommitted ASC;
+    \end{itemize}
+\end{document}

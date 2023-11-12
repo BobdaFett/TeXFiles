@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{rocca-homework}
+\usepackage[letterpaper, margin=.75in]{geometry}
+
+\title{MAT 141 Homework \#3}
+\author{Lucas Vas}
+\date{\today}
+
+\begin{document}
+
+    \maketitle
+
+    \begin{problem}{6.1 Question 26}
+        Given the set $S_i = \{x \in \mathbb{R} | 1 < x < 1 + \frac{1}{i}\}$, then:
+        \begin{itemize}
+            \item[(a)] $\bigcup\limits_{i=1}^{4} S_i = \{x \in \mathbb{R} | 1 < x < 2\}$
+            \item[(b)] $\bigcap\limits_{i=1}^{4} S_i = \{x \in \mathbb{R} | 1 < x < \frac{5}{4}\}$
+            \item[(c)] This set is not mutually disjoint, because it does not yield $\emptyset$ when intersected.
+            \item[(d)] $\bigcup\limits_{i=1}^{n} S_i = \{x \in \mathbb{R} | 1 < x < 2\}$
+            \item[(e)] $\bigcap\limits_{i=1}^{n} S_i = \{x \in \mathbb{R} | 1 < x < \frac{1 + n}{n}\}$
+            \item[(f)] $\bigcup\limits_{i=1}^{\infty} S_i = \{x \in \mathbb{R} | 1 < x < 2\}$
+            \item[(g)] $\bigcap\limits_{i=1}^{\infty} S_i = \{x \in \mathbb{R} | 1 < x < 1 + \text{some incredibly tiny number}\}$
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{7.2 Question 56}
+        Given our set X, we can create a one-to-one correspondance between the powerset of X and the set of
+        all binary strings. To start, we would have the subsets of X, a few examples being:
+        \begin{itemize}
+            \item[] $\emptyset$
+            \item[] $\{x_1, x_3, x_4\}$
+            \item[] $\{x_2, x_4\}$
+            \item[] $\{x_1, x_2, x_3, x_4\}$
+        \end{itemize}
+        Using the subscripts assigned to each element of X, we can create a binary string that represents each subset. from
+        our first example, we would have a binary string of 0000, since there are no elements. The second set would be 1011,
+        since we have $x_1, x_3$ and $x_4$, but not $x_2$. The third set would be 0110, by the same logic, and the final 
+        example would be 1111, since $x_1, x_2, x_3$ and $x_4$ are all present. This could be expanded and repeated for any
+        number of elements, and thus we have a one-to-one correspondance between the powerset of X and the set of all binary
+        strings.
+    \end{problem}
+
+    \begin{problem}{7.3 Question 20}
+        Given that $f: X \rightarrow Y$ and $g: Y \rightarrow Z$, and $g \circ f$ is onto, then $f$ does not have to be onto.
+        For example, if we have 3 elements in X, 5 elements in Y, and 2 elements in Z, then $f$ can map each element in X to
+        at least one element in Y, but not all. This would mean that $f$ was not onto. However, $g$ can map all elements from
+        Y to both elements from Z, which would allow $g \circ f$ to be onto. Therefore, $f$ does not have to be onto in order
+        for $g \circ f$ to be onto as well.
+    \end{problem}
+
+    \begin{problem}{8.2 Question 26}
+        To define a relation $R$ where $sRt$ and the sum of all elements of $s$ is equal to the sum of all elements of $t$,
+        then we can define some classes as follows:
+        \begin{equation*}
+            \begin{split}
+                [0] = & \{[0, 0, 0, 0]\} \\
+                [1] = & \{[0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [1, 0, 0, 0]\} \\
+                [2] = & \{[0, 0, 0, 2], [0, 0, 1, 1], [0, 0, 2, 0], [0, 1, 0, 1], [0, 1, 1, 0], \\ 
+                      & [0, 2, 0, 0], [1, 0, 0, 1], [1, 0, 1, 0], [1, 1, 0, 0], [2, 0, 0, 0]\}
+            \end{split}
+        \end{equation*}
+    \end{problem}
+\end{document}
