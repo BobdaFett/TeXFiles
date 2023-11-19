@@ -1,14 +1,29 @@
 \documentclass[12pt]{article}
-\usepackage[letterpaper, margin=.75in]{geometry}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage[backend=biber, style=apa, citestyle=numeric]{biblatex}
+\usepackage{fancyhdr}
 
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LO]{Lucas Vas}
+\fancyhead[RO]{ESSAY DRAFT}
+\fancyhead[CO]{\thepage}
 
+\fancypagestyle{firstPage}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+}
+
+\addbibresource{sources.bib}
 
 \title{Essay Draft}
 \author{Lucas Vas}
-\date{\today}
+\date{}
 
 \begin{document}
-
-	\maketitle
+    
+    \thispagestyle{firstPage}
+    \maketitle
+    Something to print here. And a quotation: \autocite{JudgeHerbertAI}
 
 \end{document}
