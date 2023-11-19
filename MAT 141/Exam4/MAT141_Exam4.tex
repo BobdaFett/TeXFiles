@@ -11,8 +11,10 @@
     \maketitle
 
     \begin{problem}{Problem 1}
-        There are 29 two digit multiples of 3 in total - this is because the smallest number is 3 * 4 and the largest is
-        3 * 99. 
+        There are 30 multiples of 3 - we can get this number by quite literally counting them. To use combinations,
+        we would need to choose the first number and the second number, however if the first number is a multiple of 3,
+        then there are 4 possibilities for the second number, as opposed to 3. So we would do this:
+        \[\binom{6}{1} \binom{3}{1} + \binom{3}{1} \binom{4}{1} = 30\]
     \end{problem}
 
     \begin{problem}{Problem 2}
@@ -26,7 +28,7 @@
                 \[\frac{26!}{(26-3)!} * \frac{10!}{(10-2)!} = 26 * 25 * 24 * 10 * 9 = 1,404,000\]
             \item[(c)] The number of plates that are completely unique is the number of combinations of 26 letters
                 taken 4 at a time times the number of combinations of 10 numbers taken 3 at a time:
-                \[\binom{26}{1} * \binom{26}{1} * \binom{26}{1} * \binom{26}{1} * \binom{10}{1} * \binom{10}{1} * \binom{10}{1} = 45,697,600\]
+                \[\binom{26}{1} \binom{26}{1} \binom{26}{1} \binom{26}{1} \binom{10}{1} \binom{10}{1} \binom{10}{1} = 45,697,600\]
         \end{itemize}
     \end{problem}
 
@@ -41,7 +43,7 @@
     \begin{problem}{Problem 4}
         Given that a student council has 8 men and 7 women:
         \begin{itemize}
-            \item[(a)] We can form a committee with 3 men and 3 women in: \[\binom{8}{3} * \binom{7}{3} = 1176 \text{ ways.}\]
+            \item[(a)] We can form a committee with 3 men and 3 women in: \[\binom{8}{3} \binom{7}{3} = 1176 \text{ ways.}\]
             \item[(b)] We can form a six person committee with at least one woman in: \[\binom{15}{5} = 3003 \text{ ways.}\]
         \end{itemize}
     \end{problem}
@@ -49,12 +51,81 @@
     \begin{problem}{Problem 5}
         In the word HULLABALOO, there are 3 L's, 2 A's, 2 O's, 1 H, 1 B, and 1 U, for 6 distinct letters in total.
         There are also 10 letters in total. So, the number of permutations of the word can be found by doing:
-        \[\binom{10}{3} * \binom{7}{2} * \binom{5}{2} * \binom{3}{1} * \binom{2}{1} * \binom{1}{1} = 151,200 \text{ ways.}\]
+        \[\binom{10}{3} \binom{7}{2} \binom{5}{2} \binom{3}{1} \binom{2}{1} \binom{1}{1} = 151,200 \text{ ways.}\]
     \end{problem}
 
     \begin{problem}{Problem 6}
-        Given that $n$ is a positive integer, then we can find the number of solutions to $1 \leq i \leq j \leq k \leq l \leq n$ by doing:
-        
+        Given that $n$ is a positive integer, then we can find the number of solutions to $1 \leq i \leq j \leq k \leq l \leq n$ by
+        "reindexing" the variables. In this case, I changed it to $0 \leq i \leq j \leq k \leq l \leq n-1$. Then, we can find the number
+        of solutions by doing $\binom{n-1}{4}^4$.
+    \end{problem}
+
+    \begin{problem}{Problem 7}
+        Given that $n$ is a positive integer, then we can find the number of solutions to $x_1 + x_2 + x_3 = n$ by doing:
+        \begin{itemize}
+            \item[] $\forall x_i \geq 0 \rightarrow \binom{n+2}{n}$
+            \item[] $\forall x_i \geq 1 \rightarrow \binom{(n - 3) + 2}{n - 3}$
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{Problem 8}
+        Given a deck of cards, the number of cards needed to be picked to guarantee that there are 2 cards of the same suit
+        is 5 - there are 4 suits, so if you pick 5 cards, you're guaranteed to have 2 of the same suit.
+
+        The number of cards needed to be picked to have a 50\% chance of having 2 cards of the same suit, given the same deck
+        of 52 cards, is 3. This is because there are 4 suits, so if you pick 3 cards, there's a 3:4 chance of having 2 of the
+        same suit (I think?)
+    \end{problem}
+
+    \begin{problem}{Problem 9}
+        Assuming that division by 2373 gives a repeating decimal, the number of digits in the repeating decimal is 2372.
+        This is because the number of digits in the repeating decimal is the number of digits in the number that you're
+        dividing by minus 1. So, the number of digits in the repeating decimal is 2372.
+    \end{problem}
+
+    \begin{problem}{Problem 10}
+        In any set of 13 integers chosen from 2 - 40, there are 2 integers that share the same divisor. This is because
+        there are 12 possible divisors of the numbers 2 - 40. So, if you pick 13 numbers, you're guaranteed to have 2
+        numbers that share the same divisor.
+    \end{problem}
+
+    \begin{problem}{Problem 11}
+        Using the binomial theorem to expand $(p - 2q)^4$ looks like this (I filtered out the choices where you would get a value of 1):
+        \[(-2)\binom{4}{4}p^4 + (-2)\binom{4}{3}p^3q + (-2)\binom{4}{2}p^2q^2 + (-2)\binom{4}{1}pq^3 + (-2)\binom{4}{0}q^4\]
+        This simplifies to:
+        \[2p^4 - 8p^3q + 12p^2q^2 - 8pq^3 + 2q^4\]
+    \end{problem}
+
+    \begin{problem}{Problem 12}
+        Using the binomial theorem to find the coefficient of $a^5b^7$ in $(a - 2b)^{12}$ looks like this:
+        \[\binom{12}{5}\binom{7}{7} = \frac{12!}{5!7!} * \frac{7!}{7!0!} = \frac{12!}{5!7!} = 792\]
+        We then use this number to find the coefficient of $a^5b^7$:
+        \[792 * a^5b^7 * -2 = -1584a^5b^7\]
+    \end{problem}
+    
+    \begin{problem}{Problem 13}
+        The intial case of this problem is $n = 0$, which we can then show as $\binom{n}{0} = 1$. We can also show that
+        for $n = 1$, $\binom{1}{0} + 2\binom{1}{1} = 3$. By assuming that these are true, we can then show that \newline
+        $\forall n \geq 0 \rightarrow 3^n = \binom{n}{0} + 2\binom{n}{1} + 2^2\binom{n}{2} + ... + 2^n\binom{n}{n}$
+        by doing:
+        \begin{equation*}
+            \begin{split}
+                3^{n+1} &= 3^n * 3 \\
+                &= 3^n * 3^1 \\
+                &= \left(\binom{n}{0} + ... + 2^n\binom{n}{n}\right) * \left(\binom{n}{0} + 2\binom{n}{1}\right) \\
+                &= \binom{n}{0}\binom{n}{0} + 2\binom{n}{0}\binom{n}{1} + 2\binom{n}{1}\binom{n}{0} \\
+                &+ 4\binom{n}{1}\binom{n}{1} + ... + 2^n\binom{n}{n}\binom{n}{0} + 2^{n+1}\binom{n}{n}\binom{n}{1} \\
+                &= \binom{n+1}{0} + 2\binom{n+1}{1} + 2^2\binom{n+1}{2} + ... + 2^{n+1}\binom{n+1}{n+1}
+            \end{split}
+        \end{equation*}
+        Sorry that this is a bit messy, I'm not sure how to format it better. The + sign on line 4 doesn't quite
+        line up with what I wanted to happen.
+    \end{problem} 
+
+    \begin{problem}{Problem 14 (Bonus)}
+        To find the coefficient of $x^3y^2z^5$ in the expansion of $(x + y + z)^{10}$, we can use the multinomial theorem:
+        \[\binom{10}{3, 2, 5} = \frac{10!}{3!2!5!} = 2520\]
+        Therefore, our final answer is $2520x^3y^2z^5$.
     \end{problem}
 
 \end{document}
