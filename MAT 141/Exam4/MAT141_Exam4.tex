@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{rocca-homework}
+\usepackage[letterpaper, margin=.75in]{geometry}
+
+\title{MAT 141 Homework 4}
+\author{Lucas Vas}
+\date{11/20/2023}
+
+\begin{document}
+    
+    \maketitle
+
+    \begin{problem}{Problem 1}
+        There are 29 two digit multiples of 3 in total - this is because the smallest number is 3 * 4 and the largest is
+        3 * 99. 
+    \end{problem}
+
+    \begin{problem}{Problem 2}
+        To do this question I'll assume that the letters can only ever be uppercase and the numbers are 0-9.
+        Assuming that licence plates are four letters followed by three numbers:
+        \begin{itemize}
+            \item[(a)] The number of plates possible is all the permutations of 4 letters and 3 digits:
+                \[\frac{26!}{(26-4)!} * \frac{10!}{(10-3)!} = 1,235,520,000\]
+            \item[(b)] The number of plates that start with A and end with 0 is all the permutations of
+                3 letters and 2 digits, since we're given the first and last characters:
+                \[\frac{26!}{(26-3)!} * \frac{10!}{(10-2)!} = 26 * 25 * 24 * 10 * 9 = 1,404,000\]
+            \item[(c)] The number of plates that are completely unique is the number of combinations of 26 letters
+                taken 4 at a time times the number of combinations of 10 numbers taken 3 at a time:
+                \[\binom{26}{1} * \binom{26}{1} * \binom{26}{1} * \binom{26}{1} * \binom{10}{1} * \binom{10}{1} * \binom{10}{1} = 45,697,600\]
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{Problem 3}
+        Given our graph:
+        \begin{itemize}
+            \item[(a)] You can get there 2 + 3(4) = 14 different ways.
+            \item[(b)] This is roughly the same as above - 3(4) = 12 different ways.
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{Problem 4}
+        Given that a student council has 8 men and 7 women:
+        \begin{itemize}
+            \item[(a)] We can form a committee with 3 men and 3 women in: \[\binom{8}{3} * \binom{7}{3} = 1176 \text{ ways.}\]
+            \item[(b)] We can form a six person committee with at least one woman in: \[\binom{15}{5} = 3003 \text{ ways.}\]
+        \end{itemize}
+    \end{problem}
+
+    \begin{problem}{Problem 5}
+        In the word HULLABALOO, there are 3 L's, 2 A's, 2 O's, 1 H, 1 B, and 1 U, for 6 distinct letters in total.
+        There are also 10 letters in total. So, the number of permutations of the word can be found by doing:
+        \[\binom{10}{3} * \binom{7}{2} * \binom{5}{2} * \binom{3}{1} * \binom{2}{1} * \binom{1}{1} = 151,200 \text{ ways.}\]
+    \end{problem}
+
+    \begin{problem}{Problem 6}
+        Given that $n$ is a positive integer, then we can find the number of solutions to $1 \leq i \leq j \leq k \leq l \leq n$ by doing:
+        
+    \end{problem}
+
+\end{document}
