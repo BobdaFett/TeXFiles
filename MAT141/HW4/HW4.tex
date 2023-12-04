@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage{rocca-homework}
+\usepackage[letterpaper, margin=.75in]{geometry}
+
+\title{MAT 141 Homework 4}
+\author{Lucas Vas}
+\date{\today}
+
+\begin{document}
+  \maketitle
+
+  \begin{problem}{Section 9.2 Question 28}
+    These are nested for loops in a language that I don't personally know (looks like Lua?)
+    but I assume the logic follows the same. The total number of times that this loop will
+    iterate is found by doing $(a-b+1) * (c-d+1)$. The reason we add the ''$+1$'' is because
+    the bounds are inclusive of the values of $b$ and $d$.
+  \end{problem}
+
+  \begin{problem}{Section 9.4 Question 8}
+    To solve this problem, we can create a set of sets that sum to 10 using the original
+    numbers that we're given. That would look like this:
+    \[S = \{ \{1, 9\}, \{2, 8\}, \{3, 7\}, \{4, 6\}, \{5\} \} \]
+    If we were to pick 5 values from this set, where those values are the first value in 
+    every pair, then we can see that there isn't necessarily a sum of any 2 values that
+    would result in 10. If we chose 6, then we would be guaranteed a sum of 10.
+  \end{problem}
+
+  \begin{problem}{Section 9.5 Question 17}
+    For some reason, I just cannot visualize this problem and I don't know why that is.
+    \begin{itemize}
+      \item[(a)] The straight lines can be found by doing $\binom{10}{2}$ This is equivalent to
+        45. This is because every line is a combination of 2 points, and there are 10 points in
+        total.
+      \item[(b)] The number of straight lines that do not pass through A is found similarly -
+        you're simply reducing the number of points that can be chosen from. This would be
+        $\binom{9}{2}$, which is equivalent to 36.
+      \item[(c)] The number of triangles that are present in this figure is found by doing
+        $\binom{10}{3}$, which is equivalent to 120. Triangles, by definition, have 3 points
+        that are connected by straight lines, so we choose 3 points from the 10 that are
+        possible.
+      \item[(d)] The number of triangles that do not pass through A is found similarly to the
+        previous problem - you're simply reducing the number of points that can be chosen from.
+        This would be $\binom{9}{3}$, which is equivalent to 84.
+    \end{itemize}
+  \end{problem}
+  
+  \begin{problem}{Section 9.7 Question 16}
+    The problem that we're supposed to prove looks very similar to the binomial theorem. I
+    noticed that the first section looks like the total number of combinations that are
+    possible from the addition of sets $m$ and $n$, where you choose $r$ elements, where
+    $r \leq m \vee n$. This looks like the same issue that's solved with the binomial theorem,
+    as your coefficient from $(m + n)^{x}$ where $m^{r} n^{s-r}$ will yield the same answer.
+ 
+    The equation that's presented in the problem deals with iterating through the value $r$ so
+    that you can choose $r$ values from $m + n$. The first iteration will choose $r$ values from
+    $m$, which leaves no choices for $n$. The second iteration will choose $r-1$ values from
+    $m$, which leaves a single choice for set $n$, and so on. This will eventually result in
+    $r$ values being chosen from $n$, which would sum to all combinations of $\binom{m+n}{r}$.
+  \end{problem}
+
+  \begin{problem}{(BONUS) Section 9.3 Question 26}
+    Using the set of all strings of \textit{a}'s, \textit{b}'s and \textit{c}'s:
+    \begin{itemize}
+      \item[(a)] The list of all strings of lengths 0 through 3 that don't contain \textit{aa} is:
+        \begin{itemize}
+          \item[$s_0$:] $\emptyset$ - the empty string.
+          \item[$s_1$:] $a, b, c$
+          \item[$s_2$:] $ab, ac, ba, bb, bc, ca, cb, cc$
+          \item[$s_3$:] $aba, abb, abc, aca, acb, acc, bab, bac, bba, bbb, bbc, bca, bcb,$
+          \item[] $bcc, cab, cac, cba, cbb, cbc, cca, ccb, ccc$
+        \end{itemize}
+      \item[(b)] For all $n \geq 0$, the number of strings of length $n$ that don't contain \textit{aa}
+        is:
+        \begin{itemize}
+          \item[$s_0$:] $1$ - just the empty string.
+          \item[$s_1$:] $3$
+          \item[$s_2$:] $8 = 2(3) + 2(1)$
+          \item[$s_3$:] $22 = 2(8) + 2(3)$
+        \end{itemize}
+      \item[(c)] The recurrence relation for the number of strings of length $n$ that don't contain
+        \textit{aa} is:
+        \[s_{n} = 2s_{n-1} + 2s_{n-2}\]
+      \item[(d)] Using this relation, the number of strings that exist (without \textit{aa}) of length
+        4 is:
+        \begin{equation*}
+          \begin{split}
+            s_{4} & = 2(22) + 2(8) \\
+              & = 44 + 16 \\
+              & = 60
+          \end{split}
+        \end{equation*}
+    \end{itemize}
+\end{problem}
+
+\end{document}
