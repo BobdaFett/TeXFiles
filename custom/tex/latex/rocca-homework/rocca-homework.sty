@@ -1,6 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{rocca-homework}
 
+% ----- Document Options ------------------------------------------------------
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[
+  twoside,
+  top=1in,
+  bottom=.75in,
+  inner=.75in,
+  outer=.75in
+  ]{geometry}
+\pagestyle{myheadings}
+
 % ----- Packages --------------------------------------------------------------
 
 \RequirePackage{tcolorbox}
@@ -35,7 +47,7 @@
     colframe=black,
 % Title formatting
     title={
-        #2 \hfill Grade:\phantom{.....}
+      #2 \hfill Grade:\phantom{WWWW}
     },
     fonttitle=\large\bfseries,#1
 }
