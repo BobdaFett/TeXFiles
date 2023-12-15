@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage[normalem]{ulem}
+\usepackage[letterpaper, margin=.75in]{geometry}
+
+\begin{document}
+  \section{Logical Schema}
+  \begin{itemize}
+    \item[] \textbf{EMPLOYEE}: (\underline{UserID}, FirstName, LastName, Status, DateActive, DateInactive, Department)
+    \item[] \textbf{DEVICE}: (\underline{SerialNumber}, \dashuline{UserID}, \dashuline{WarrantyTypeID}, Brand, Model, PurchaseDate, WarrantyDate, EndOfLifeDate, Status, OrderNumber, Seller, Type, Price)
+    \item[] \textbf{WARRANTY}: (\underline{WarrantyTypeID}, Description, YearsParts, YearsLabor, YearsService)
+    \item[] \textbf{SERVICE\_RECORD}: (\underline{TicketID}, \dashuline{UserID}, \dashuline{TechnicianID}, \dashuline{DeviceSerial}, ServiceDate, ServiceType, ServiceReason, Price)
+  \end{itemize}
+
+  \section{Data Volume Analysis}
+  Number of rows in each table:
+  \begin{itemize}
+    \item[] \textbf{EMPLOYEE}: 50
+    \item[] \textbf{DEVICE}: 50
+    \item[] \textbf{WARRANTY}: 5
+    \item[] \textbf{SERVICE\_RECORD}: 50
+  \end{itemize}
+
+  Size of each row in bytes:
+  \begin{itemize}
+    \item[] \textbf{EMPLOYE}: (4 + 32 + 32 + 8 + 3 + 3 + 32) = 114B
+    \item[] \textbf{DEVICE}: (32 + 32 + 32 + 3 + 3 + 4 + 3 + 8 + 4 + 32 + 4 + 32 + 4) = 193B
+    \item[] \textbf{WARRANTY}: (4 + 4 + 4 + 4 + 255) = 271B
+    \item[] \textbf{SERVICE\_RECORD}: (4 + 3 + 255 + 255 + 4 + 4 + 32 + 4) = 561B
+  \end{itemize} 
+
+  Total size of each table in bytes:
+  \begin{itemize}
+    \item[] \textbf{EMPLOYEE}: 50 * 114B = 5700B
+    \item[] \textbf{DEVICE}: 50 * 193B = 9650B
+    \item[] \textbf{WARRANTY}: 5 * 271B = 1355B
+    \item[] \textbf{SERVICE\_RECORD}: 50 * 561B = 28050B
+  \end{itemize}
+
+  Total size of all tables in bytes: 44755B, or 44.755KB
+
+\end{document}
+  
