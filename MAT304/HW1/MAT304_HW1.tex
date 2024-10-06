@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\usepackage{rocca-homework}
+
+\begin{document}
+
+\title{MAT 304 Homework 1}
+\date{\today}
+\author{Lucas Vas}
+
+\maketitle
+
+\begin{problem}{Section 2.4 - Problem 28}
+The logical form of part A is:
+
+\begin{equation*}
+	(P \wedge Q) \vee (P \wedge \sim Q) \vee (\sim P \wedge \sim Q)
+\end{equation*}
+
+The logical form of part B is:
+
+\begin{equation*}
+	(P \vee \sim Q)
+\end{equation*}
+
+When used with a truth table, the two logical forms are equivalent. The truth table is shown below:
+
+\begin{center}
+	\begin{tabular}{| c c | c | c |}
+		\hline
+		$P$ & $Q$ & $(P \wedge Q) \vee (P \wedge \sim Q) \vee (\sim P \wedge \sim Q)$ & $(P \vee \sim Q)$ \\
+		\hline
+		T   & T   & T                                                                 & T                 \\
+		T   & F   & T                                                                 & T                 \\
+		F   & T   & F                                                                 & F                 \\
+		F   & F   & T                                                                 & T                 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+Therefore, the two circuits shown in the original image are equivalent.
+
+\end{problem}
+
+\begin{problem}{Section 2.4 - Problem 31}
+The circuit that represents the logical expression $(\sim P \wedge \sim Q) \vee (\sim P \wedge Q) \vee (P \wedge \sim Q)$ is:
+\begin{center}
+	%\includegraphics[width=8cm]{mat304-2.4-31.png}
+	\input{mat304-2.4-31.tex}
+\end{center}
+\end{problem}
+
+\begin{problem}{Section 3.4 - Problem 20}
+The argument `All dogs are carnivorous, and Aaron is not a dog, therefore Aaron is not carnivorous' is invalid.
+This is an example of the inverse error. If we create a truth table for the argument, we can see that the argument is invalid:
+
+\begin{center}
+	\begin{tabular}{| c c | c |}
+		\hline
+		$P$ & $Q$ & $P \rightarrow Q$ \\
+		\hline
+		T   & T   & T                 \\
+		T   & F   & F                 \\
+		F   & T   & T                 \\
+		F   & F   & T                 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+This specific case where Aaron is not a dog falls in multiple cases where the argument is valid - one where he is carnivorous and one where he is not.
+Therefore, the argument is invalid, even though Aaron is not a dog and he may not be carnivorous.
+
+For the second part of this problem, which generalizes the statement, we can see that the argument is still invalid. The truth table will be the same,
+and the reasoning for the invalidity of the argument will still hold.
+\end{problem}
+
+\begin{problem}{Section 3.4 - Problem 22}
+The argument given can be simplified to the following logical form:
+\begin{equation*}
+	\begin{split}
+		S(x) \rightarrow V(x) \\
+		T(x) \rightarrow V(x) \\
+		\hline
+		\therefore S(x) \wedge T(x)
+	\end{split}
+\end{equation*}
+
+I do not believe that this is a valid argument - the premises, when combined, do not necessarily imply the conclusion.
+When $S(x)$ is true, this does not immediately imply that $T(x)$ is true. The same goes for when $T(x)$ is true. Therefore,
+the argument is invalid.
+\end{problem}
+
+\begin{problem}{Section 3.4 - Problem 27}
+The argument given can be simplified to the following logical form:
+\begin{equation*}
+	\begin{split}
+		I(x) \rightarrow \sim P(x) \\
+		P(l)                       \\
+		\hline
+		\therefore \sim I(l)
+	\end{split}
+\end{equation*}
+
+This is a perfect example of modus tollens. It is a valid argument.
+\end{problem}
+
+\end{document}
