@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{rocca-homework}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -10,5 +11,44 @@
 \section*{Four Bit Adder Circuit}
 
 Circuit results are on the next page.
+
+\clearpage
+
+This picture is really as big as I was able to make it.
+
+\begin{center}
+\includegraphics[width=7in]{4xAdderLookAhead}
+\end{center}
+
+\clearpage
+
+\section*{Truth Table}
+
+\begin{center}
+\begin{tabular}{ccc|cc}
+$A$ & $B$ & $C_{in}$ & $C_{out}$ & S \\
+\hline
+0000 & 0000 & 0 & 0 & 0000 \\
+0000 & 0000 & 1 & 0 & 0001 \\
+0000 & 0001 & 0 & 0 & 0001 \\
+0000 & 0001 & 1 & 0 & 0010 \\
+0000 & 0010 & 0 & 0 & 0010 \\
+0000 & 0010 & 1 & 0 & 0011 \\
+0000 & 0011 & 0 & 0 & 0011 \\
+0000 & 0011 & 1 & 0 & 0100 \\
+0001 & 0001 & 0 & 0 & 0010 \\
+0001 & 0001 & 1 & 0 & 0011 \\
+0011 & 0011 & 0 & 0 & 0110 \\
+0011 & 0011 & 1 & 0 & 0111 \\
+0101 & 1010 & 1 & 1 & 0000 \\
+1101 & 0011 & 0 & 1 & 0001 \\
+1101 & 1101 & 1 & 1 & 1011 \\
+1111 & 0001 & 0 & 1 & 0000 \\
+1111 & 0001 & 1 & 1 & 0001 \\
+1111 & 1111 & 0 & 1 & 1110 \\
+1111 & 1111 & 1 & 1 & 1111 \\
+\hline
+\end{tabular}
+\end{center}
 
 \end{document}
