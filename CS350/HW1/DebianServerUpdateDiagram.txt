@@ -1,0 +1,35 @@
+@startuml
+
+Administrator -> Computer : Login
+Administrator -> Computer : sudo apt update
+activate Computer
+Administrator -> Computer : Input password
+Computer --> Administrator : Request password
+Computer -> Computer : Validate password
+Computer -> Administrator : Invalid password
+destroy Computer
+note left
+This process can repeat
+up to 4 times, at which point
+the process will stop.
+end note
+Administrator -> Computer : Input password
+activate Computer
+Computer -> Computer : Validate password
+Computer -> Repository : Request update
+activate Repository
+Repository -> Repository : Gather information
+return Update information
+return Notify of updates
+Administrator -> Computer : sudo apt upgrade
+activate Computer
+Computer -> Repository : Request packages
+activate Repository
+Repository -> Repository : Gather packages
+|||
+return Package data
+Computer --> Administrator : Request confirmation
+Administrator -> Computer : Confirm
+Computer -> Computer : Apply updates
+
+@enduml

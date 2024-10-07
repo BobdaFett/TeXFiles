@@ -1,0 +1,29 @@
+@startuml
+
+object "__BookExample:Book__" as Book {
+    publisher = "Example Pub"
+    pubDate = "01/01/2000"
+    isbnNumber = "0123456789"
+}
+
+object "PartExample:Part" as Part {
+    title = "Example Part"
+    number = "1"
+}
+
+object "ChapterExample:Chapter" as Chapter {
+    title = "Example Chapter"
+    number = "1"
+    abstract = "This is an example chapter"
+}
+
+object "SectionExample:Section" as Section {
+    title = "Example Section"
+    number = "1"
+}
+
+Book -- Part
+Part -- Chapter
+Chapter -- Section
+
+@enduml

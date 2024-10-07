@@ -1,0 +1,43 @@
+@startuml
+
+|Customer|
+start
+:Call Restaurant;
+|Customer|
+
+|Restaurant|
+  :Open Order;
+  repeat
+  repeat :Allocate Ingredients;
+  backward: Call Customer;
+  repeat while (Ingredients Unavailable) is (yes) not (no)
+  fork
+  :Bake Pizza;
+  fork again
+  :Request Driver;
+  end fork
+|Restaurant|
+
+|Driver|
+  :Pickup Pizza;
+  repeat
+  :Knock On Door;
+  backward: Find Correct House;
+  repeat while (Wrong House) is (yes) not (no)
+|Driver|
+
+|Customer|
+  :Recieve Pizza;
+  |Driver|
+    backward: Return Pizza;
+  |Driver|
+|Customer|
+  repeat while (Wrong Pizza) is (yes) not (no)
+|Customer|
+|Customer|
+
+|Customer|
+  :Eat!;
+  stop
+|Customer|
+@enduml

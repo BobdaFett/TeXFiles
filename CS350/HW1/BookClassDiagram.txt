@@ -1,0 +1,30 @@
+@startuml
+
+class Book {
+    {field} publisher
+    {field} pubDate
+    {field} isbnNumber
+}
+
+interface TitleInformation {
+    {field} title
+    {field} number
+}
+
+class Part implements TitleInformation {}
+
+class Chapter implements TitleInformation {
+    {field} abstract
+}
+
+class Section implements TitleInformation {}
+
+Book "1" *-- "1..*" Part
+Part "1" *-- "1..*" Chapter
+Chapter "1" *-- "1..*" Section
+
+Part --|> TitleInformation
+Chapter --|> TitleInformation
+Section --|> TitleInformation
+
+@enduml
